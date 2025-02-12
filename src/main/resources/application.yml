@@ -1,8 +1,10 @@
 spring:
+  config:
+    import: aws-parameterstore:/testPragma/
   datasource:
-    url: jdbc:postgresql://database-1.checs4a6aia6.us-east-2.rds.amazonaws.com:5432/databasepersona
-    username: postgres
-    password: postgres
+    url: ${db.url}
+    username: ${db.username}
+    password: ${db.password}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
